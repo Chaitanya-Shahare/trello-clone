@@ -1,6 +1,7 @@
 .list {
   width: 250px;
 
+  min-height: 80vh;
   &__header {
     display: flex;
     justify-content: space-between;

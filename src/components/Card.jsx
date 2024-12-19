@@ -2,9 +2,20 @@ import React from "react";
 import "./Card.scss";
 import { RiDeleteBin2Line } from "@remixicon/react";
 
-function Card({ title }) {
+function Card({ id, columnIndex, title }) {
+  const onDragStart = (e) => {
+    e.dataTransfer.setData(
+      "card",
+      JSON.stringify({
+        id,
+        sourceColumnIndex: columnIndex,
+        title,
+      })
+    );
+    console.log(e.dataTransfer.getData("card"));
+  };
   return (
-    <div className="card">
+    <div className="card" draggable onDragStart={onDragStart}>
       <div className="card__main">{title}</div>
       <div className="card__footer">
         <button className="card__delete-btn">
