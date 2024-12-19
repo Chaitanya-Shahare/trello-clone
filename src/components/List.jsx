@@ -17,7 +17,7 @@ function List({ id, title, cards = [], toggleCardModal, deleteList }) {
       </div>
       <div className="list__cards-wrapper">
         {cards.map((card) => {
-          return <Card />;
+          return <Card key={card.id} title={card.title} id={card.id} />;
         })}
       </div>
     </div>

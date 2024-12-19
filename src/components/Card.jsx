@@ -2,7 +2,7 @@ import React from "react";
 import "./Card.scss";
 import { RiDeleteBin2Line } from "@remixicon/react";
 
-function Card({ title = "Card" }) {
+function Card({ title }) {
   return (
     <div className="card">
       <div className="card__main">{title}</div>

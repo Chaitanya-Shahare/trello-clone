@@ -54,8 +54,9 @@ function KanbanBoard() {
     let newboard = [...board];
     newboard[listIndex].cards.push({
       id: nanoid(),
-      title,
+      title: title,
     });
+    console.log(newboard);
     setTitle("");
     setBoard(newboard);
   };
@@ -68,13 +69,16 @@ function KanbanBoard() {
   const handleCreateList = (e) => {
     e.preventDefault();
     setIsCreateListModalOpen(false);
-    setBoard((prev) => [
-      ...prev,
-      {
-        id: nanoid(),
-        title: title,
-      },
-    ]);
+    setBoard((prev) => {
+      return [
+        ...prev,
+        {
+          id: nanoid(),
+          title: title,
+          cards: [],
+        },
+      ];
+    });
     setTitle("");
   };
 
@@ -101,6 +105,7 @@ function KanbanBoard() {
             <List
               key={list.id}
               id={list.id}
+              index={index}
               title={list.title}
               cards={list.cards}
               toggleCardModal={() => {
@@ -108,6 +113,7 @@ function KanbanBoard() {
                 setIsCardModalOpen(true);
               }}
               deleteList={deleteList}
+              setBoard={setBoard}
             />
           );
         })}
