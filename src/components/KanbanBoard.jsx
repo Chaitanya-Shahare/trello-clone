@@ -14,10 +14,6 @@ function KanbanBoard() {
         title: "Todo",
         cards: [
           {
-            id: 2,
-            title: "Create board",
-          },
-          {
             id: 3,
             title: "Create list",
           },
@@ -30,10 +26,6 @@ function KanbanBoard() {
           {
             id: 5,
             title: "Create board",
-          },
-          {
-            id: 6,
-            title: "Create list",
           },
         ],
       },
@@ -87,6 +79,14 @@ function KanbanBoard() {
     setBoard(newBoard);
   };
 
+  const deleteCard = (id) => {
+    let newBoard = [...board];
+    for (let i = 0; i < newBoard.length; i++) {
+      newBoard[i].cards = newBoard[i].cards.filter((c) => c.id !== id);
+    }
+    setBoard(newBoard);
+  };
+
   useEffect(() => {
     initializeBoard();
   }, []);
@@ -114,6 +114,7 @@ function KanbanBoard() {
               }}
               deleteList={deleteList}
               setBoard={setBoard}
+              deleteCard={deleteCard}
             />
           );
         })}

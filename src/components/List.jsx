@@ -11,6 +11,7 @@ function List({
   toggleCardModal,
   deleteList,
   setBoard,
+  deleteCard,
 }) {
   const handleOnDrop = (e) => {
     e.preventDefault();
@@ -54,6 +55,7 @@ function List({
               title={card.title}
               id={card.id}
               columnIndex={index}
+              deleteCard={deleteCard}
             />
           );
         })}
