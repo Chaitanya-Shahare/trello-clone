@@ -48,14 +48,16 @@ function List({
         </button>
       </div>
       <div className="list__cards-wrapper">
-        {cards.map((card) => {
+        {cards.map((card, cardIndex) => {
           return (
             <Card
               key={card.id}
               title={card.title}
               id={card.id}
+              index={cardIndex}
               columnIndex={index}
               deleteCard={deleteCard}
+              setBoard={setBoard}
             />
           );
         })}

@@ -17,6 +17,10 @@ function KanbanBoard() {
             id: 3,
             title: "Create list",
           },
+          {
+            id: 6,
+            title: "Testing",
+          },
         ],
       },
       {
