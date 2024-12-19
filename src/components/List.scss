@@ -1,0 +1,33 @@
+.list {
+  width: 250px;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__add-btn {
+    width: 40px;
+    height: 40px;
+    font-size: larger;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    color: grey;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      color: black;
+    }
+  }
+
+  &__cards-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
