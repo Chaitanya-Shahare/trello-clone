@@ -25,9 +25,8 @@ function Card({ id, columnIndex, index, title, deleteCard, setBoard }) {
     setBoard((board) => {
       let newBoard = [...board];
 
-      let temp = newBoard[columnIndex].cards[index];
-      newBoard[columnIndex].cards[index] = draggedCard;
-      newBoard[columnIndex].cards[draggedCard.index] = temp;
+      newBoard[columnIndex].cards.splice(draggedCard.index, 1);
+      newBoard[columnIndex].cards.splice(index, 0, draggedCard);
 
       return newBoard;
     });
