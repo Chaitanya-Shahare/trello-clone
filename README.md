@@ -1,6 +1,8 @@
 # Trello Clone
 
-Live link: https://trello-clone.chaitanyashahare.com/
+Live link: 
+- https://trello-clone.chaitanyashahare.com/
+- https://trello-clone-655s4pncp-chaitanyashahares-projects.vercel.app/
 
 https://github.com/user-attachments/assets/c9fb7e8b-a60f-492b-ab70-fd083b6ac775
 
